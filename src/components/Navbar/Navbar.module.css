@@ -3,6 +3,15 @@
   background-color: rgb(255, 214, 164);
 }
 
-.item {
+.item a {
   color: white;
+  text-decoration: none;
+  padding-left: 10px;
+  margin-top: 20px;
+  padding-bottom: 10px;
 }
+
+.item a.activeLink {
+  color: cornflowerblue;
+}
+
