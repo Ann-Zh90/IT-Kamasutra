@@ -4,6 +4,10 @@
     padding: 10px;
 }
 
+.dialogsItems {
+    border-right: 2px solid darkslateblue;
+}
+
 .dialogsItems a {
     text-decoration: none;
     color: white;
@@ -15,10 +19,19 @@
 
 .dialog {
     padding: 10px;
+
+}
+
+.dialog img {
+    width:80px;
+    height: 80px;
+    border-radius: 50px;
+    margin-right: 5px;
 }
 
 .messages {
     color: white;
+    padding-left: 10px;
 }
 
 
