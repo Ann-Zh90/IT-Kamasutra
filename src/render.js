@@ -3,15 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {addPost} from "./redux/state";
+import {addPost, sendMessage, updateMessageText, updateNewPostText} from "./redux/state";
 import {BrowserRouter} from "react-router-dom";
 
-/*addPost('Hey hey');*/
+
 export let rerenderEntireTree = (state) => {
     ReactDOM.render(
         <BrowserRouter>
             <React.StrictMode>
-                <App state={state} addPost={addPost}/>
+                <App state={state}
+                     addPost={addPost}
+                     sendMessage={sendMessage}
+                     updateNewPostText={updateNewPostText}
+                     updateMessageText={updateMessageText}/>
             </React.StrictMode>
         </BrowserRouter>,
         document.getElementById('root')
