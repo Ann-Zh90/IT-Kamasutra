@@ -4,7 +4,7 @@ import s from './FriendItem.module.css'
 const FriendItem = (props) => {
     return (
         <div className={s.friendItem}>
-            <img src={props.src}/>
+            <img alt='' src={props.src}/>
             <div>
                 {props.name}
             </div>
