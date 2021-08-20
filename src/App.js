@@ -12,11 +12,10 @@ import {updateMessageText} from "./redux/store";
 
 
 const App = (props) => {
-
     return (
         <div className="app-wrapper">
             <Header/>
-            <Navbar state={props.state.sidebarPage}/>
+            <Navbar/>
             <div className='app-wrapper-content'>
                 <Route path='/news' component={News}/>
                 <Route path='/music' component={Music}/>
