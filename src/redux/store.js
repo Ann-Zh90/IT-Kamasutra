@@ -60,23 +60,6 @@ let store = {
         this._callsubscriber = observer;
     },
 
-    updateMessageText(newText) {
-        this._state.dialogsPage.newMessageBody
-            = newText;
-        this._callsubscriber(this._state);
-    },
-    sendMessage() {
-        let newMessage = {
-            id: 6,
-            message: this._state.dialogsPage.newMessageBody
-            ,
-        }
-        this._state.dialogsPage.messages.push(newMessage);
-        this._state.dialogsPage.newMessageBody
-            = '';
-        this._callsubscriber(this._state)
-    },
-
     dispatch(action) {
 
         this._state.profilePage = profileReducer(this._state.profilePage, action);
