@@ -4,5 +4,21 @@
 }
 
 .header img {
-  width: 90px;
+  height: 90px;
+}
+
+.loginBlock {
+  float: right;
+}
+
+.loginBlock a {
+  color: white;
+}
+
+.authContainer {
+  display: flex;
+}
+
+.userPhoto {
+  border-radius: 50%;
 }
