@@ -10,14 +10,15 @@ import {
 } from '../../redux/users-reducer';
 import Users from './Users';
 import Preloader from "../common/preloader/Preloader";
-import {usersAPI} from "../../api/api";
+import {withAuthRedirect} from "../../hoc/WithAuthRedirect";
+import {compose} from "redux";
 
 class UsersContainer extends React.Component {
     componentDidMount() {
         this.props.getUsers(this.props.currentPage, this.props.pageSize)
 
 
-        //cod bellow changed to thunk
+        //cod bellow was changed to thunk
         /*this.props.toggleIsFetching(true);
         usersAPI.getUsers(this.props.currentPage, this.props.pageSize)
             .then(data => {
@@ -47,6 +48,8 @@ class UsersContainer extends React.Component {
     }
 }
 
+
+
 let mapStateToProps = (state) => {
     return {
         users: state.usersPage.users,
@@ -59,14 +62,17 @@ let mapStateToProps = (state) => {
     }
 }
 
+export default compose(
+    connect(mapStateToProps, {
+        follow,
+        unfollow,
+        setUsers,
+        setCurrentPage,
+        setTotalUserCount,
+        toggleIsFetching,
+        toggleFollowingProgress,
+        getUsers,
+    }),
+    withAuthRedirect
+)(UsersContainer)
 
-export default connect(mapStateToProps, {
-    follow,
-    unfollow,
-    setUsers,
-    setCurrentPage,
-    setTotalUserCount,
-    toggleIsFetching,
-    toggleFollowingProgress,
-    getUsers,
-})(UsersContainer);
