@@ -1,3 +1,6 @@
+import {authAPI, usersAPI} from "../api/api";
+import * as axios from "axios";
+
 const SET_USER_DATA = 'SET_USER_DATA';
 const SET_USER_PHOTO = 'SET_USER_PHOTO';
 
@@ -31,6 +34,22 @@ const authReducer = (state = initialState, action) => {
 
 export const setAuthUserData = (userId, email, login) => ({type: SET_USER_DATA, data: {userId, email, login}});
 export const setUserPhoto = (photo) => ({type: SET_USER_PHOTO, photo});
+
+export const getAuthUserData = () => {
+    return (dispatch) => {
+        authAPI.me()
+            .then(response => {
+                if (response.data.resultCode === 0) {
+                    let {id, email, login} = response.data.data;
+                    dispatch(setAuthUserData(id, email, login));
+                    usersAPI.getProfile(8)
+                        .then(response => {
+                            dispatch(setUserPhoto(response.data.photos.small));
+                        })
+                }
+            })
+    }
+}
 
 
 
