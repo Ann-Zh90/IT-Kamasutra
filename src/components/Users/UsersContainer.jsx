@@ -72,7 +72,6 @@ export default compose(
         toggleIsFetching,
         toggleFollowingProgress,
         getUsers,
-    }),
-    withAuthRedirect
+    })
 )(UsersContainer)
 
