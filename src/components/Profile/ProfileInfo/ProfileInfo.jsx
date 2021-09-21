@@ -5,19 +5,16 @@ import ProfileStatus from "./ProfileStatus"
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 
-const ProfileInfo = (props) => {
+const ProfileInfo = ({profile, status, updateStatus}) => {
 
-    if (!props.profile) {
+    if (!profile) {
         return <Preloader/>
     }
     return (
         <div>
-            {/*<div>
-                <img src='https://cdn.jpegmini.com/user/images/bullet-1.jpg' width='100%' height='250px' alt=''/>
-            </div>*/}
             <div className={s.descriptionBlock}>
-                <img src={props.profile.photos.large} alt=''/>
-                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
+                <img src={profile.photos.large} alt=''/>
+                <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
             </div>
         </div>
     )
