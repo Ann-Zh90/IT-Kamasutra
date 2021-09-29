@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/IT-Kamasutra/static/css/main.a2851077.chunk.css",
+    "main.js": "/IT-Kamasutra/static/js/main.36e024fe.chunk.js",
+    "main.js.map": "/IT-Kamasutra/static/js/main.36e024fe.chunk.js.map",
+    "runtime-main.js": "/IT-Kamasutra/static/js/runtime-main.ef6a9e15.js",
+    "runtime-main.js.map": "/IT-Kamasutra/static/js/runtime-main.ef6a9e15.js.map",
+    "static/js/2.2b257e80.chunk.js": "/IT-Kamasutra/static/js/2.2b257e80.chunk.js",
+    "static/js/2.2b257e80.chunk.js.map": "/IT-Kamasutra/static/js/2.2b257e80.chunk.js.map",
+    "static/css/3.da11ec51.chunk.css": "/IT-Kamasutra/static/css/3.da11ec51.chunk.css",
+    "static/js/3.e7252c89.chunk.js": "/IT-Kamasutra/static/js/3.e7252c89.chunk.js",
+    "static/js/3.e7252c89.chunk.js.map": "/IT-Kamasutra/static/js/3.e7252c89.chunk.js.map",
+    "static/css/4.00789be4.chunk.css": "/IT-Kamasutra/static/css/4.00789be4.chunk.css",
+    "static/js/4.60b1bc10.chunk.js": "/IT-Kamasutra/static/js/4.60b1bc10.chunk.js",
+    "static/js/4.60b1bc10.chunk.js.map": "/IT-Kamasutra/static/js/4.60b1bc10.chunk.js.map",
+    "static/js/5.fc529608.chunk.js": "/IT-Kamasutra/static/js/5.fc529608.chunk.js",
+    "static/js/5.fc529608.chunk.js.map": "/IT-Kamasutra/static/js/5.fc529608.chunk.js.map",
+    "index.html": "/IT-Kamasutra/index.html",
+    "static/css/3.da11ec51.chunk.css.map": "/IT-Kamasutra/static/css/3.da11ec51.chunk.css.map",
+    "static/css/4.00789be4.chunk.css.map": "/IT-Kamasutra/static/css/4.00789be4.chunk.css.map",
+    "static/css/main.a2851077.chunk.css.map": "/IT-Kamasutra/static/css/main.a2851077.chunk.css.map",
+    "static/js/2.2b257e80.chunk.js.LICENSE.txt": "/IT-Kamasutra/static/js/2.2b257e80.chunk.js.LICENSE.txt",
+    "static/media/preloader.5cb21b80.svg": "/IT-Kamasutra/static/media/preloader.5cb21b80.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ef6a9e15.js",
+    "static/js/2.2b257e80.chunk.js",
+    "static/css/main.a2851077.chunk.css",
+    "static/js/main.36e024fe.chunk.js"
+  ]
+}
