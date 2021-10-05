@@ -7,10 +7,15 @@
     padding: 2px;
     border: 1px solid grey;
 }
+.pageNumber:hover {
+    cursor: pointer;
+    background-color: white;
+}
 
 .pageNumber.selectedPage {
     font-weight: bold;
     border-color: black;
+    background-color: white;
 }
 
 .navButton {
