@@ -2,8 +2,9 @@ import React from "react";
 import FriendItem from "./FriendItem";
 import s from './Friends.module.css'
 import {connect} from "react-redux";
-import {getFriends} from "../../redux/friends-reducer";
+import {getFriends, unFollow} from "../../redux/friends-reducer";
 import Friends from "./Friends";
+import {usersAPI} from "../../api/api";
 
 
 
@@ -17,7 +18,6 @@ class FriendsContainer extends React.Component {
 }
 
     render() {
-        debugger
         return (
             <div>
                 <Friends friends={this.props.friends}
@@ -25,6 +25,7 @@ class FriendsContainer extends React.Component {
                          totalFriends={this.props.totalFriends}
                          pageSize={this.props.pageSize}
                          onPageChange={this.onPageChange}
+                         unFollow={this.props.unFollow}
 
                 />
             </div>
@@ -46,4 +47,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect (mapStateToProps, {getFriends}) (FriendsContainer)
+export default connect (mapStateToProps, {getFriends, unFollow}) (FriendsContainer)

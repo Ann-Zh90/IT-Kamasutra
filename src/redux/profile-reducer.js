@@ -79,8 +79,6 @@ export const savePhotoSuccess = (photos) => ({type: SAVE_PHOTO_SUCCESS, photos})
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
 
 
-
-
 export const getUserProfile = (userId) => async (dispatch) => {
     let response = await usersAPI.getProfile(userId);
     dispatch(setUserProfile(response.data));
@@ -93,9 +91,15 @@ export const getStatus = (userId) => async (dispatch) => {
 }
 
 export const updateStatus = (status) => async (dispatch) => {
-    let response = await profileAPI.updateStatus(status)
-    if (response.data.resultCode === 0) {
-        dispatch(setStatus(status))
+    try {
+        let response = await profileAPI.updateStatus(status)
+        if (response.data.resultCode === 0) {
+            dispatch(setStatus(status))
+        } /*else {
+            alert(response.data.messages)
+        }*/
+    } catch(error) {
+        debugger
     }
 }
 
@@ -113,7 +117,8 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
     if (response.data.resultCode === 0) {
         dispatch(getUserProfile(userId))
     } else {
-        dispatch(stopSubmit("edit-profile", {_error: response.data.messages[0]}))
+        dispatch(stopSubmit("edit-profile", {_error: response.data.messages[0]}));
+        return Promise.reject(response.data.messages[0]);
     }
 }
 export default profileReducer;

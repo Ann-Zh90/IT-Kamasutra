@@ -9,8 +9,8 @@ const instance = axios.create({
 })
 
 export const usersAPI = {
-    getUsers(currentPage = 1, pageSize = 5) {
-        return instance.get(`users?page=${currentPage}&count=${pageSize}`)
+    getUsers(currentPage = 1, pageSize = 5, friend = null) {
+        return instance.get(`users?page=${currentPage}&count=${pageSize}&friend=${friend}`)
             .then(response => response.data);
     },
     follow(userId) {
@@ -51,11 +51,17 @@ export const authAPI = {
     me () {
         return instance.get(`auth/me`);
     },
-    login (email, password, rememberMe = false) {
-        return instance.post(`auth/login`, {email, password, rememberMe});
+    login (email, password, rememberMe = false, captcha=null) {
+        return instance.post(`auth/login`, {email, password, rememberMe, captcha});
     },
     logout () {
         return instance.delete(`auth/login`);
+    }
+}
+
+export const securityAPI = {
+    getCaptcha () {
+        return instance.get('security/get-captcha-url');
     }
 }
 

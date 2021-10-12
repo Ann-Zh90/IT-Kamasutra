@@ -1,12 +1,16 @@
 import React from "react";
 import s from './FriendItem.module.css'
 import userPhoto from "../../assets/images/user.png";
+import {unFollow} from "../../redux/friends-reducer";
 
 const FriendItem = (props) => {
-    debugger
     return (
         <div className={s.friendItem}>
-            <img alt='' src={props.friend.photos.small || userPhoto}/>
+            <div><img alt='' src={props.friend.photos.small || userPhoto}/></div>
+            {props.friend.followed&&<button onClick={()=> props.unFollow(props.friend.id)}>Unfollow</button>}
+            {!props.friend.followed&&<button onClick={()=> props.unFollow(props.friend.id)}>Follow</button>}
+
+
             <div>
                 <div>{props.friend.name}</div>
                 <div> Status: {props.friend.status}</div>

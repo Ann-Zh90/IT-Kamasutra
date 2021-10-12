@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 import s from "./ProfileInfo.module.css"
 import Preloader from "../../common/preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
-import userPhoto from '../../../assets/images/user.png'
-import Profile from "../Profile";
+import userPhoto from '../../../assets/images/user.png';
 import ProfileDataForm from "./ProfileDataForm";
 
 
@@ -21,8 +20,12 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, isFetch
     }
 
     const onSubmit =(formData) => {
-        saveProfile(formData);
-        //setEditMode(false)
+        saveProfile(formData).then (
+            () => {
+                setEditMode(false)
+            }
+        )
+
     }
     return (
         <div>

@@ -4,7 +4,6 @@ import User from "../Users/User";
 import Paginator from "../common/Paginator/Paginator";
 
 const Friends = (props) => {
-    debugger
     let friends = props.friends;
     let pagesCount = Math.ceil(props.totalFriends / props.pageSize);
 
@@ -23,8 +22,12 @@ const Friends = (props) => {
             </div>
 
             {
-                friends.map(fr => <FriendItem friend={fr}
+                friends.map(fr => <User user={fr}
                                               key={fr.id}
+                                        followingInProgress={props.followingInProgress}
+                                        unfollow={props.unfollow}
+                                        follow={props.follow}
+
                 />)
             }
 
@@ -33,3 +36,4 @@ const Friends = (props) => {
 }
 
 export default Friends
+//user, followingInProgress, unfollow, follow
