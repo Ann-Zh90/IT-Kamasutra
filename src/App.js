@@ -28,13 +28,15 @@ class App extends React.Component {
         alert('Some error occurred');
         //console.error(promiseRejectionEvent)
     }
+
     componentDidMount() {
         this.props.initializeApp();
         window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors);
     }
-componentWillUnmount() {
+
+    componentWillUnmount() {
         window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors)
-}
+    }
 
     render() {
         if (!this.props.initialized) {
@@ -51,7 +53,7 @@ componentWillUnmount() {
                         <Route path='/music' component={Music}/>
                         <Route path='/settings' component={Settings}/>
                         <Route path='/dialogs' render={withSuspense(DialogsContainer)}/>
-                        <Redirect exact  from="/" to="/profile" />
+                        <Redirect exact from="/" to="/profile"/>
                         <Route path='/profile/:userId?' render={withSuspense(ProfileContainer)}/>
                         <Route path='/users' render={() => <UsersContainer/>}/>
                         <Route path='/login' render={() => <LoginPage/>}/>
@@ -69,7 +71,7 @@ const mapStateToProps = (state) => ({
     initialized: state.app.initialized
 })
 
-let AppConrainer = compose(
+let AppContainer = compose(
     withRouter,
     connect(mapStateToProps, {initializeApp}))(App);
 
@@ -77,7 +79,7 @@ let SamuraiJSApp = (props) => {
     return <BrowserRouter>
         <React.StrictMode>
             <Provider store={store}>
-                <AppConrainer/>
+                <AppContainer/>
             </Provider>
         </React.StrictMode>
     </BrowserRouter>
